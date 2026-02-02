@@ -1,0 +1,32 @@
+# =========================
+# Read design
+# =========================
+read_verilog rtl/counter.v
+read_liberty -lib tech/osu035_stdcells.lib
+
+# =========================
+# Synthesis
+# =========================
+synth -top counter
+
+# Map flip-flops to library cells
+dfflibmap -liberty tech/osu035_stdcells.lib
+
+# Map combinational logic to standard cells
+proc 
+opt 
+flatten 
+opt 
+techmap 
+opt
+
+# =========================
+# Reports
+# =========================
+stat
+
+# =========================
+# Write outputs
+# =========================
+write_verilog synth/counter_trial.v
+
