@@ -1,0 +1,28 @@
+# ---- OS / Editor junk ----
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Zone.Identifier
+*:Zone.Identifier
+
+# ---- Yosys / Fault internals ----
+parser.out
+parsetab.py
+__pycache__/
+
+# ---- Build / temp files ----
+*.log
+*.tmp
+*.history
+
+# ---- Python cache ----
+*.pyc
+
+# ---- Do NOT ignore these (intentional) ----
+# *.v
+# *.lib
+# *.json
+# *.yml
+
